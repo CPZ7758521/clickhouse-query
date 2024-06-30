@@ -5,26 +5,21 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 public class ThreadPoolUtil {
-    public static ThreadPoolExecutor pool;
+    public static ThreadPoolUtil util;
 
-    public ThreadPoolUtil() {
+    private ThreadPoolUtil() {
+
     }
 
-    public static ThreadPoolExecutor getInstance() {
-
-        if (pool == null) {
+    public static ThreadPoolUtil getInstance() {
+        if (util == null) {
             synchronized (ThreadPoolUtil.class) {
-                if (pool == null) {
-                    pool = new ThreadPoolExecutor(
-                            10,
-                            50,
-                            30L,
-                            TimeUnit.SECONDS,
-                            new LinkedBlockingDeque<Runnable>(Integer.MAX_VALUE)
-                    );
+                if (util == null) {
+                    System.out.println("创建实例");
+                    util = new ThreadPoolUtil();
                 }
             }
         }
-        return pool;
+        return util;
     }
 }
