@@ -11,7 +11,7 @@ import java.sql.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class Deal_bid {
+public class Quote_bid {
     String bond_code_wind;
     Date transact_date;
     Date transact_time;
