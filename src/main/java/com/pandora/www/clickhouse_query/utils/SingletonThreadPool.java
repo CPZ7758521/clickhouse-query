@@ -10,6 +10,7 @@ public class SingletonThreadPool extends ThreadPoolExecutor {
 
     private static Logger LOG = LoggerFactory.getLogger(SingletonThreadPool.class);
 
+
     private static SingletonThreadPool pool;
 
     private SingletonThreadPool(int corePoolSize, int maximumPoolSize, long keepAliveTime, TimeUnit unit, BlockingQueue<Runnable> workQueue, ThreadFactory threadFactory, RejectedExecutionHandler handler) {
